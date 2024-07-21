@@ -15,6 +15,10 @@
 #     dest: "{{ app_location }}"
 #     remote_src: yes
 
+- name: check nexus_url
+  ansible.builtin.debug:
+    msg: "http://{{ nexus_url }}/repository/{{ component }}/com/expense/{{ component }}/{{ appVersion }}/{{ component }}-{{ appVersion }}.zip"
+
 - name: download the artifact from nexus
   ansible.builtin.unarchive:
     src: "http://{{ nexus_url }}/repository/{{ component }}/com/expense/{{ component }}/{{ appVersion }}/{{ component }}-{{ appVersion }}.zip"
