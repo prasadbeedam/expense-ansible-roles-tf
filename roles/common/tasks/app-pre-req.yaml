@@ -16,7 +16,7 @@
 #     remote_src: yes
 
 - name: check nexus_url
-  ansible.builtin.shell: "echo 'http://{{ nexus_url }}/repository/{{ component }}/com/expense/{{ component }}/{{ appVersion }}/{{ component }}-{{ appVersion }}.zip'""
+  ansible.builtin.shell: echo "http://{{ nexus_url }}/repository/{{ component }}/com/expense/{{ component }}/{{ appVersion }}/{{ component }}-{{ appVersion }}.zip"
 
 - name: download the artifact from nexus
   ansible.builtin.unarchive:
